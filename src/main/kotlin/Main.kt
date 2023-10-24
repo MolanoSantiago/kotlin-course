@@ -1,21 +1,65 @@
 const val NAME = "Santiago Molano";
 
+// Control structures
+fun getRole(roleId: Int): String {
+    val rol: String = if (roleId == 1) {
+        "Administrador"
+    } else if (roleId == 2) {
+        "Analista"
+    } else {
+        "Cliente"
+    }
+    return rol;
+}
+
+fun getAccount() {
+    println("Ingrese ID de la cuenta");
+    val accountId = readlnOrNull().toString().toInt()
+    when (accountId) {
+        1 -> {
+            println("Ahorros   | Bancolombia | 58000004527")
+        }
+
+        2 -> {
+            println("Ahorros   | RappiPay    | 21400004527")
+        }
+
+        3 -> {
+            println("Ahorros   | Nequi       | 36900004527")
+        }
+
+        4 -> {
+            println("Corriente | Davivienda  | 44800004527")
+        }
+
+        else -> {
+            println("No existe la cuenta")
+        }
+    }
+    println("- - - - - - - - - - - - - - - - - - -")
+    println("")
+}
+
 fun main(args: Array<String>) {
     // immutable
     // String
     val profession: String = "Backend developer";
+    val roleId: Int = 2;
+    val rol = getRole(roleId);
 
     // mutable
     // Integer
     var money: Int = 80000;
 
+    getAccount()
+
     // Interpolation or templates
-    println("Hola $NAME! su saldo actual: $ $money COP");
+    println("$rol $NAME! su saldo actual: $ $money COP");
     println("");
     money = 45000;
     println("Qué desea hacer hoy como $profession?");
     println("");
-    println("Se ha gastado $ 35000 COP, ahora tiene $ $money");
+    println("Se ha gastado $ 35000 COP, ahora tiene $ $money COP");
 
     // Boolean
     val boolean: Boolean = true;
