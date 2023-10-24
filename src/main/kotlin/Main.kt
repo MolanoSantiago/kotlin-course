@@ -12,9 +12,29 @@ fun getRole(roleId: Int): String {
     return rol;
 }
 
+// Loops
+fun loader() {
+    var count = 0;
+    var message = "Cargando";
+    print(message)
+    while (count < 40) {
+        message += "."
+        println(message)
+        count++;
+    }
+    println("")
+
+    do {
+        println("Generando numero aleatorio...")
+        val randomNumber = (0..100).random()
+        println("Numero generado: $randomNumber")
+    } while (randomNumber < 80)
+}
+
 fun getAccount() {
     println("Ingrese ID de la cuenta");
     val accountId = readlnOrNull().toString().toInt()
+    // loader()
     when (accountId) {
         1 -> {
             println("Ahorros   | Bancolombia | 58000004527")
